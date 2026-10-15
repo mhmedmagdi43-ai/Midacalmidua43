@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شفاء ميد | تواصل معنا</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>شفاء ميد للمعدات الطبية</h1>
+    <nav aria-label="التنقل الرئيسي">
+      <a href="index.html">الرئيسية</a> |
+      <a href="products.html">المنتجات</a> |
+      <a href="about.html">من نحن</a> |
+      <a href="contact.html">تواصل معنا</a> |
+      <a href="login.html">تسجيل الدخول</a> |
+      <a href="preview.html">معاينة النظام</a>
+    </nav>
+  </header>
+  <hr>
+
+  <main>
+    <h2>تواصل معنا</h2>
+    <p>يسعدنا استقبال استفساراتك ومقترحاتك. املأ النموذج وسنرد عليك في أقرب وقت.</p>
+
+    <form action="#" method="post">
+      <fieldset>
+        <legend>نموذج التواصل</legend>
+        <p>
+          <label for="name">الاسم الكامل:</label><br>
+          <input type="text" id="name" name="name" required minlength="3" autocomplete="name">
+        </p>
+        <p>
+          <label for="contact-email">البريد الإلكتروني:</label><br>
+          <input type="email" id="contact-email" name="email" required autocomplete="email">
+        </p>
+        <p>
+          <label for="subject">موضوع الرسالة:</label><br>
+          <select id="subject" name="subject">
+            <option value="product">استفسار عن منتج</option>
+            <option value="quote">طلب عرض سعر</option>
+            <option value="support">خدمة ما بعد البيع</option>
+            <option value="suggestion">اقتراح أو تعليق</option>
+          </select>
+        </p>
+        <p>
+          <label for="comment">التعليق أو الرسالة:</label><br>
+          <textarea id="comment" name="comment" rows="7" cols="45" required></textarea>
+        </p>
+        <button type="submit">إرسال الرسالة</button>
+        <button type="reset">مسح الحقول</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <hr>
+  <footer><p>نحن هنا لخدمتكم وتقديم الحل المناسب لاحتياجاتكم الطبية.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
