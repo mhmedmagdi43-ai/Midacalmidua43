@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شفاء ميد | معاينة النظام</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="preview-page">
+  <header>
+    <h1>شفاء ميد للمعدات الطبية</h1>
+    <p>معاينة نظام تسجيل الدخول وإدارة المنتجات</p>
+    <nav aria-label="التنقل الرئيسي">
+      <a href="index.html">الرئيسية</a> |
+      <a href="products.html">المنتجات</a> |
+      <a href="about.html">من نحن</a> |
+      <a href="contact.html">تواصل معنا</a> |
+      <a href="login.html">تسجيل الدخول</a> |
+      <a href="preview.html">معاينة النظام</a>
+    </nav>
+  </header>
+  <hr>
+
+  <main>
+    <section class="preview-hero">
+      <span class="eyebrow">SYSTEM PREVIEW</span>
+      <h2>لوحة واحدة لإدارة الدخول والمنتجات</h2>
+      <p>جرّب رحلة المستخدم من تسجيل الدخول إلى متابعة المنتجات وإدارتها في واجهة واضحة ومتجاوبة.</p>
+    </section>
+
+    <section id="preview-login-panel" class="preview-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">01 / ACCESS</span>
+          <h2>تسجيل الدخول</h2>
+        </div>
+        <span class="panel-status">معاينة</span>
+      </div>
+      <p class="panel-description">استخدم أي بريد إلكتروني صحيح وكلمة مرور من 6 أحرف أو أكثر للدخول. صلاحيات الإضافة والحذف وتغيير الحالة متاحة فقط لحساب صاحب الشركة.</p>
+      <form id="preview-login-form" class="preview-form">
+        <div class="form-field">
+          <label for="preview-email">البريد الإلكتروني</label>
+          <input type="email" id="preview-email" placeholder="name@example.com" required>
+        </div>
+        <div class="form-field">
+          <label for="preview-password">كلمة المرور</label>
+          <input type="password" id="preview-password" placeholder="ستة أحرف على الأقل" minlength="6" required>
+        </div>
+        <button class="primary-button" type="submit">دخول إلى لوحة الإدارة</button>
+      </form>
+      <p id="preview-login-message" class="js-message" aria-live="polite"></p>
+    </section>
+
+    <section id="preview-dashboard" class="preview-dashboard" hidden>
+      <div class="dashboard-topbar">
+        <div>
+          <span class="eyebrow">02 / MANAGEMENT</span>
+          <h2>إدارة المنتجات</h2>
+          <p id="preview-user-label">مسجل الدخول</p>
+        </div>
+        <div class="dashboard-actions">
+          <span id="preview-role-label" class="role-badge">مستخدم</span>
+          <button id="preview-logout" class="secondary-button" type="button">تسجيل الخروج</button>
+        </div>
+      </div>
+
+      <div class="dashboard-stats" aria-label="إحصاءات المنتجات">
+        <article class="stat-card"><span>إجمالي المنتجات</span><strong id="stat-total">0</strong></article>
+        <article class="stat-card"><span>متوفرة الآن</span><strong id="stat-available">0</strong></article>
+        <article class="stat-card"><span>حسب الطلب</span><strong id="stat-demand">0</strong></article>
+      </div>
+
+      <div class="management-layout">
+        <section class="products-manager-card">
+          <div class="manager-toolbar">
+            <div>
+              <h3>قائمة المنتجات</h3>
+              <p>ابحث أو صفِّ المنتجات ثم نفّذ الإجراء المناسب.</p>
+            </div>
+            <div class="product-filters">
+              <label class="sr-only" for="preview-search">البحث في المنتجات</label>
+              <input type="search" id="preview-search" placeholder="ابحث باسم المنتج أو رقمه">
+              <label class="sr-only" for="preview-filter">تصفية حسب التوفر</label>
+              <select id="preview-filter">
+                <option value="all">كل المنتجات</option>
+                <option value="available">متوفر</option>
+                <option value="on-demand">حسب الطلب</option>
+              </select>
+            </div>
+          </div>
+          <div id="preview-product-list" class="preview-product-list"></div>
+          <p id="preview-empty-state" class="empty-state" hidden>لا توجد منتجات مطابقة للبحث الحالي.</p>
+        </section>
+
+        <section id="owner-product-controls" class="add-product-card">
+          <span class="eyebrow">PRODUCT FORM</span>
+          <h3>إضافة منتج جديد</h3>
+          <p>أضف منتجاً إلى قائمة المعاينة لتجربة الإدارة.</p>
+          <form id="add-product-form" class="preview-form">
+            <div class="form-field">
+              <label for="new-product-name">اسم المنتج</label>
+              <input type="text" id="new-product-name" required minlength="3" placeholder="مثال: جهاز تخطيط القلب">
+            </div>
+            <div class="form-field">
+              <label for="new-product-price">السعر</label>
+              <input type="text" id="new-product-price" required placeholder="مثال: 2,500 ريال">
+            </div>
+            <div class="form-field">
+              <label for="new-product-status">حالة التوفر</label>
+              <select id="new-product-status">
+                <option value="available">متوفر</option>
+                <option value="on-demand">حسب الطلب</option>
+              </select>
+            </div>
+            <button class="primary-button" type="submit">إضافة المنتج</button>
+          </form>
+          <p id="add-product-message" class="js-message" aria-live="polite"></p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <hr>
+  <footer><p>معاينة واجهة النظام — سيتم ربط البيانات الحقيقية وقاعدة البيانات في مرحلة PHP.</p></footer>
+  <script src="preview.js"></script>
+</body>
+</html>
